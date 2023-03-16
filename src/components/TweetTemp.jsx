@@ -6,7 +6,7 @@ import { tweetContext } from '../context/TweetContext';
 
 const TweetTemp = () => {
 
-    const { name, username, tweet, verified, photoTweet, tweetTime, photo, profilePicture, tweetActions, tweetActionsStatus } = useContext(tweetContext);
+    const { name, username, tweet, verified, photoTweet, tweetTime, photo, profilePicture, tweetActions, tweetActionsStatus,setTweet } = useContext(tweetContext);
 
     const [tweetPhotoPreview, setTweetPhotoPreview] = useState(null)
     const [profilePicturePreview, setProfilePicturePreview] = useState(null)
@@ -42,7 +42,11 @@ const TweetTemp = () => {
         }
     }, [profilePicture])
 
-
+    const tweetFormat = (tweet) => {
+        let formattedTweet = tweet;
+        formattedTweet=formattedTweet.replace(/@([\w]+)/g, '<span className="text-[#1d9bf0]">@$1</span>').replace(/#([\wşçöüuıİ]+)/gi, '<span className="text-[#1d9bf0]">#$1</span>').replace(/(https?:\/\/[\w\.\/]+)/, '<span className="text-[#1d9bf0]">$1</span>')
+        setTweet(formattedTweet)
+    }
 
     const months = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağus", "Eyl", "Ek", "Kas", "Ara"];
 
@@ -66,9 +70,8 @@ const TweetTemp = () => {
                 </div>
             </div>
             <div className='w-full'>
-                <p className='pt-[11px] text-[17px] font-tweet leading-[20px] text-[#f7f9f9] whitespace-pre-wrap'>
-                    {tweet}
-                </p>
+                <p className='pt-[11px] text-[17px] font-tweet leading-[20px] text-[#f7f9f9] whitespace-pre-wrap' dangerouslySetInnerHTML={{__html: tweet}} />
+
             </div>
             {photoTweet &&
                 <div className='w-[566px] h-[530px] flex items-end '>

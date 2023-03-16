@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        twitterDim: "#15202b"
+        twitterDim: "#15202b",
+        twitterBlue: "#1d9bf0"
       },
       fontFamily:{
         tweet: ['-apple-system', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', 'Helvetica', 'Arial', 'sans-serif']

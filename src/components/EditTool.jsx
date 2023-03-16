@@ -65,6 +65,16 @@ const EditTool = () => {
         });
     }
 
+    const handleTweet = (tweet) => {
+        let newTweet=tweet
+        .replace(/@([\w]+)/g, '<span class="text-twitterBlue">@$1</span>')
+        .replace(/#([\wşçöüuıİ]+)/gi, '<span class="text-twitterBlue">#$1</span>')
+        .replace(/(https?:\/\/[\w\.\/]+)/, '<span class="text-twitterBlue">$1</span>');
+        setTweet(newTweet)
+    }
+
+  
+
 
 
     return (
@@ -84,7 +94,7 @@ const EditTool = () => {
             </label>
             <label className='flex w-full justify-between gap-4 items-center text-[14px] text-white' htmlFor='name'>Name: <input onChange={(e) => setName(e.target.value)} className='text-[14px] text-black px-2 py-1 rounded-lg w-[350px]' type="text" id="name" /></label>
             <label className='flex w-full justify-between gap-4 items-center text-[14px] text-white' htmlFor='username'>Username: <input onChange={(e) => setUsername(e.target.value)} className='text-[14px] text-black px-2 py-1 rounded-lg w-[350px]' type="text" id="username" /></label>
-            <label className='flex w-full justify-between gap-4 items-start  text-[14px] text-white' htmlFor='tweet'>Tweet: <textarea onChange={(e) => setTweet(e.target.value)} className='text-[14px] text-black px-2 py-1 rounded-lg w-[350px] max-h-[125px] min-h-[75px]' type="text" id="tweet" /></label>
+            <label className='flex w-full justify-between gap-4 items-start  text-[14px] text-white' htmlFor='tweet'>Tweet: <textarea onChange={(e) => handleTweet(e.target.value)} className='text-[14px] text-black px-2 py-1 rounded-lg w-[350px] max-h-[125px] min-h-[75px]' type="text" id="tweet" /></label>
             <label className='flex w-full justify-between gap-4 items-center text-[14px] text-white' >
                 <div className='flex items-center gap-4'>
                     <input onChange={() => setPhotoTweet((prev) => !prev)} type="checkbox" />Photo Tweet:
