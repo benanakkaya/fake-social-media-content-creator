@@ -3,7 +3,7 @@ import { tweetContext } from '../context/TweetContext';
 import domtoimage from 'dom-to-image';
 
 
-const EditTool = () => {
+const TweetEditTool = () => {
 
     const fileInputRef = useRef(null);
 
@@ -148,4 +148,4 @@ const EditTool = () => {
     )
 }
 
-export default EditTool
+export default TweetEditTool

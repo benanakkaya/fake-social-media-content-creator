@@ -4,7 +4,7 @@ import { tweetContext } from '../context/TweetContext';
 
 
 
-const TweetTemp = () => {
+const Tweet = () => {
 
     const { name, username, tweet, verified, photoTweet, tweetTime, photo, profilePicture, tweetActions, tweetActionsStatus,setTweet } = useContext(tweetContext);
 
@@ -42,11 +42,7 @@ const TweetTemp = () => {
         }
     }, [profilePicture])
 
-    const tweetFormat = (tweet) => {
-        let formattedTweet = tweet;
-        formattedTweet=formattedTweet.replace(/@([\w]+)/g, '<span className="text-[#1d9bf0]">@$1</span>').replace(/#([\wşçöüuıİ]+)/gi, '<span className="text-[#1d9bf0]">#$1</span>').replace(/(https?:\/\/[\w\.\/]+)/, '<span className="text-[#1d9bf0]">$1</span>')
-        setTweet(formattedTweet)
-    }
+
 
     const months = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağus", "Eyl", "Ek", "Kas", "Ara"];
 
@@ -101,4 +97,4 @@ const TweetTemp = () => {
     )
 }
 
-export default TweetTemp
+export default Tweet

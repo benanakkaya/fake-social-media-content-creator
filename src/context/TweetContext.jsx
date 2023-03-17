@@ -6,20 +6,13 @@ export const tweetContext = React.createContext();
 const TweetContext = (props) => {
 
     const [profilePicture, setProfilePicture] = useState(null);
-    const [name, setName] = useState("");
-    const [username, setUsername] = useState("");
-    const [tweet, setTweet] = useState("");
-    const [verified, setVerified] = useState("no");
+    const [name, setName] = useState("John Doe");
+    const [username, setUsername] = useState("johndoe");
+    const [tweet, setTweet] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+    const [verified, setVerified] = useState("yellow");
     const [photoTweet, setPhotoTweet] = useState(false);
     const [photo, setPhoto] = useState(null);
-    const [hasLike, setHasLike] = useState(false);
-    const [likes, setLikes] = useState(1);
-    const [hasRetweet, setHasRetweet] = useState(false);
-    const [retweets, setRetweets] = useState(1);
-    const [hasQuote, setHasQuote] = useState(false);
-    const [quotes, setQuotes] = useState(1);
-
-    const [tweetActions, setTweetActions] = useState({ retweets: 1, quotes: 1, likes: 1, views: 1 });
+    const [tweetActions, setTweetActions] = useState({ retweets: 1, quotes: 1, likes: 1, views: 15212 });
     const [tweetActionsStatus, setTweetActionsStatus] = useState({ retweet: false, quote: false, like: false })
     const [tweetTime, setTweetTime] = useState({ hour: 0, minute: 0, day: 1, month: 1, year: 2023 })
 
