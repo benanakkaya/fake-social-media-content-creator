@@ -41,18 +41,18 @@ const IgPostEditTool = () => {
             <div className='flex items-center gap-5'>
                 <label className='flex items-center gap-4 w-full justify-between text-white text-[14px]'>
                     Verified
-                    <select onChange={(e) => setVerified(e.target.value)} value={verified} className='w-[120px] text-black px-2 py-1 rounded-lg text-[14px]'>
+                    <select onChange={(e) => setVerified(e.target.value)} value={verified} className='w-[300px] text-black px-2 py-1 rounded-lg text-[14px]'>
                         <option value={false}>No Verified</option>
                         <option value={true}>Verified</option>
                     </select>
                 </label>
-                <label className='flex whitespace-nowrap items-center gap-4 w-full justify-between text-white text-[14px]'>
+                {/* <label className='flex whitespace-nowrap items-center gap-4 w-full justify-between text-white text-[14px]'>
                     Active Story:
                     <select className='w-[120px] text-black px-2 py-1 rounded-lg text-[14px]'>
                         <option value="no">No</option>
                         <option value="yes">Yes</option>
                     </select>
-                </label>
+                </label> */}
             </div>
             <label className='flex w-full justify-between gap-4 items-center text-[14px] text-white' htmlFor='username'>Username: <input placeholder='johndoe' onChange={(e) => setUsername(e.target.value)} className='text-[14px] text-black px-2 py-1 rounded-lg w-[350px]' type="text" id="username" /></label>
             <label className='flex w-full justify-between gap-4 items-center text-[14px] text-white' htmlFor='description'>Description: <input placeholder='New York, USA' onChange={(e) => setDescription(e.target.value)} className='text-[14px] text-black px-2 py-1 rounded-lg w-[350px]' type="text" id="description" /></label>
